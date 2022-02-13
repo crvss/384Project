@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    [SerializeField] private float Speed = 0.5f;
+    [SerializeField] private float Speed = 20f;
 
     // Start is called before the first frame update
     void Start()
