@@ -13,8 +13,8 @@ public class PlatformController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) {
-            Debug.Log("W");
+        if (Input.GetKeyDown(KeyCode.A)) {
+            Debug.Log("A");
         }
     }
 }
