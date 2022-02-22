@@ -15,7 +15,7 @@ TagManager:
   - Platform
   - Bricks
   - Power-Ups
-  - 
+  - Background
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Bricks
     uniqueID: 684007407
+    locked: 0
+  - name: Background
+    uniqueID: 2711579955
     locked: 0
