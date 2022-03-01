@@ -2364,7 +2364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformObject: {fileID: 1295012594}
-  deathZone: -9
+  deathZone: -10
 --- !u!1001 &1101732593
 PrefabInstance:
   m_ObjectHideFlags: 0

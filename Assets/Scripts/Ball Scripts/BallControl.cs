@@ -36,8 +36,8 @@ public class BallControl : MonoBehaviour
         {
             if (!ballMode)
             {
+                rb2D.isKinematic = false; //reset force on ball
                 rb2D.AddForce(ballInitialVector);
-
                 ballMode = !ballMode;
             }
         }
@@ -49,18 +49,16 @@ public class BallControl : MonoBehaviour
 
             transform.position = ballPos;
         }
-        /*
-        //Update player position
-        ballPos = this.transform.position;
-        */
 
-        //If to reset the game when the player dies :(
+        //Reset the ball when the player dies :(
         if (ballMode && transform.position.y < deathZone)
         {
             ballMode = !ballMode;
             ballPos.x = platformObject.transform.position.x;
             ballPos.y = -6.926f; //arbitrary starting value for the ball
             transform.position = ballPos;
+
+            rb2D.isKinematic = true;
         }
     }
 }
