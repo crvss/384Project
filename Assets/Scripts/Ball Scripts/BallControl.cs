@@ -8,8 +8,8 @@ public class BallControl : MonoBehaviour
     private Vector3 ballPos;
     private Vector2 ballInitialVector;
     private Rigidbody2D rb2D;
-
     public GameObject platformObject;
+    [SerializeField] public float deathZone;
     private void Awake()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -48,8 +48,18 @@ public class BallControl : MonoBehaviour
 
             transform.position = ballPos;
         }
-
+        /*
         //Update player position
         ballPos = this.transform.position;
+        */
+
+        //If to reset the game when the player dies :(
+        if (ballMode && transform.position.y < deathZone)
+        {
+            ballMode = !ballMode;
+            ballPos.x = platformObject.transform.position.x;
+            ballPos.y = platformObject.transform.position.y;
+            transform.position = ballPos;
+        }
     }
 }
