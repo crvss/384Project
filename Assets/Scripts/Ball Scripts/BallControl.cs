@@ -10,6 +10,7 @@ public class BallControl : MonoBehaviour
     private Rigidbody2D rb2D;
     public GameObject platformObject;
     [SerializeField] public float deathZone;
+
     private void Awake()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -37,7 +38,7 @@ public class BallControl : MonoBehaviour
             {
                 rb2D.AddForce(ballInitialVector);
 
-                ballMode = !!ballMode;
+                ballMode = !ballMode;
             }
         }
 
@@ -58,7 +59,7 @@ public class BallControl : MonoBehaviour
         {
             ballMode = !ballMode;
             ballPos.x = platformObject.transform.position.x;
-            ballPos.y = platformObject.transform.position.y;
+            ballPos.y = -6.926f; //arbitrary starting value for the ball
             transform.position = ballPos;
         }
     }
