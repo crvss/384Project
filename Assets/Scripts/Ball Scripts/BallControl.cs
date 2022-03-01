@@ -8,8 +8,6 @@ public class BallControl : MonoBehaviour
     private Vector3 ballPos;
     private Vector2 ballInitialVector;
     private Rigidbody2D rb2D;
-    private float gameBoundsx = 15.75f;
-    private float gameBoundsy = 10.0f;
     public GameObject platformObject;
     [SerializeField] public float deathZone;
 
@@ -61,18 +59,6 @@ public class BallControl : MonoBehaviour
             transform.position = ballPos;
 
             rb2D.isKinematic = true;
-        }
-
-        //Prevent platform from moving outside game bounds
-        if (ballPos.x < -gameBoundsx)
-        {
-            transform.position = new Vector3(-gameBoundsx, ballPos.y, ballPos.z);
-            Debug.Log("help");
-        }
-        if (ballPos.x > gameBoundsx)
-        {
-            transform.position = new Vector3(gameBoundsx, ballPos.y, ballPos.z);
-            Debug.Log("help2");
         }
     }
 }
