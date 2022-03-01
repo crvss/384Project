@@ -8,8 +8,8 @@ public class BallControl : MonoBehaviour
     private Vector3 ballPos;
     private Vector2 ballInitialVector;
     private Rigidbody2D rb2D;
-    public float gameBounds;
 
+    public GameObject platformObject;
     private void Awake()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -41,17 +41,15 @@ public class BallControl : MonoBehaviour
             }
         }
 
+        //Attach ball to platform while inactive
+        if (!ballMode && platformObject != null)
+        {
+            ballPos.x = platformObject.transform.position.x;
+
+            transform.position = ballPos;
+        }
+
         //Update player position
         ballPos = this.transform.position;
-
-        //Prevent platform from moving outside game bounds
-        if (ballPos.x < -gameBounds)
-        {
-            transform.position = new Vector3(-gameBounds, ballPos.y, ballPos.z);
-        }
-        if (ballPos.x > gameBounds)
-        {
-            transform.position = new Vector3(gameBounds, ballPos.y, ballPos.z);
-        }
     }
 }
