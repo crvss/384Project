@@ -600,3 +600,4 @@ Received Import Request.
 Start importing Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Open Sprite Shape.prefab using Guid(86ae7de409eb54f619fb1328e4d42480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78a7b90d603d0a33c7b4e3280488626') in 0.016522 seconds 
   Import took 0.020162 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
