@@ -24,6 +24,12 @@ public class PlatformController : MonoBehaviour
         //Update player position
         playerPos = this.transform.position;
 
+        boundaryRestrict();
+        
+    }
+
+    private void boundaryRestrict()
+    {
         //Prevent platform from moving outside game bounds
         if (playerPos.x < -gameBounds)
         {

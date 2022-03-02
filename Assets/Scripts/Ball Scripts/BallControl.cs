@@ -31,16 +31,7 @@ public class BallControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Inital force to start the game
-        if (Input.GetButtonDown("Jump") == true) 
-        {
-            if (!ballMode)
-            {
-                rb2D.isKinematic = false; //reset force on ball
-                rb2D.AddForce(ballInitialVector);
-                ballMode = !ballMode;
-            }
-        }
+        applyBallForce();
 
         //Attach ball to platform while inactive
         if (!ballMode && platformObject != null)
@@ -50,6 +41,25 @@ public class BallControl : MonoBehaviour
             transform.position = ballPos;
         }
 
+        resetOnDeath();
+    }
+
+    private void applyBallForce()
+    {
+        //Inital force to start the game
+        if (Input.GetButtonDown("Jump") == true)
+        {
+            if (!ballMode)
+            {
+                rb2D.isKinematic = false; //reset force on ball
+                rb2D.AddForce(ballInitialVector);
+                ballMode = !ballMode;
+            }
+        }
+    }
+
+    public void resetOnDeath()
+    {
         //Reset the ball when the player dies :(
         if (ballMode && transform.position.y < deathZone)
         {

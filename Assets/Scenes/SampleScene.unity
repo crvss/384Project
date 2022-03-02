@@ -2506,7 +2506,7 @@ TrailRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 3
-    numCornerVertices: 15
+    numCornerVertices: 0
     numCapVertices: 5
     alignment: 0
     textureMode: 0
@@ -2953,7 +2953,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1295012598}
   - component: {fileID: 1295012597}
-  - component: {fileID: 1295012596}
   - component: {fileID: 1295012595}
   - component: {fileID: 1295012599}
   m_Layer: 7
@@ -2977,32 +2976,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   gameBounds: 15.75
---- !u!61 &1295012596
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295012594}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0406394, y: -0.00641644}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20, y: 5.46}
-    newSize: {x: 20, y: 5.46}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 17.024765, y: 2.2450016}
-  m_EdgeRadius: 0.05
 --- !u!212 &1295012597
 SpriteRenderer:
   m_ObjectHideFlags: 0
