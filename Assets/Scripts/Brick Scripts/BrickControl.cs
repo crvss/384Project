@@ -5,8 +5,8 @@ using UnityEngine;
 public class BrickControl : MonoBehaviour
 {
     public int brickHP;
-    public int brickDamageTaken;
-    public int pointsGiven;
+    private int brickDamageTaken;
+    public int pointsToGive;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,19 @@ public class BrickControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        void onCollisionEnter (Collision2D collision)
+        {
+            if (collision.gameObject.tag == "Ball")
+            {
+                brickDamageTaken++;
+                Debug.Log("damage taken");
+
+                if (brickDamageTaken == brickHP)
+                {
+                    Destroy(this.gameObject);
+                    Debug.Log("Destroyed brick");
+                }
+            }
+        }
     }
 }
