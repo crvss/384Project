@@ -123,4 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brickHP: 1
-  pointsToGive: 2
+  pointsToGive: 1
