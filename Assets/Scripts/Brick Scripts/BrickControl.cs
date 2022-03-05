@@ -17,18 +17,17 @@ public class BrickControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void onCollisionEnter (Collision2D collision)
+        
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
         {
-            if (collision.gameObject.tag == "Ball")
-            {
-                brickDamageTaken++;
-                Debug.Log("damage taken");
+            brickDamageTaken++;
 
-                if (brickDamageTaken == brickHP)
-                {
-                    Destroy(this.gameObject);
-                    Debug.Log("Destroyed brick");
-                }
+            if (brickDamageTaken == brickHP)
+            {
+                Destroy(this.gameObject);
             }
         }
     }
