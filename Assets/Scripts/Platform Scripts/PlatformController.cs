@@ -25,6 +25,11 @@ public class PlatformController : MonoBehaviour
         playerPos = this.transform.position;
 
         boundaryRestrict();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Return to menu - maybe confirm (?)
+        }
         
     }
 
