@@ -6,12 +6,18 @@ public class PlatformController : MonoBehaviour
 {
     [SerializeField] private float Speed = 20f;
     public float gameBounds;
-    private Vector3 playerPos;
+    private Vector3 platformPos;
+
+    private int score;
+    private int lives;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        playerPos = gameObject.transform.position;
+        platformPos = gameObject.transform.position;
+        score = 0;
+        lives = 3;
     }
 
     // Update is called once per frame
@@ -22,7 +28,7 @@ public class PlatformController : MonoBehaviour
         this.transform.Translate(hSpeed * Time.deltaTime, 0, 0); //use time to move player on seconds
 
         //Update player position
-        playerPos = this.transform.position;
+        platformPos = this.transform.position;
 
         boundaryRestrict();
 
@@ -36,13 +42,18 @@ public class PlatformController : MonoBehaviour
     private void boundaryRestrict()
     {
         //Prevent platform from moving outside game bounds
-        if (playerPos.x < -gameBounds)
+        if (platformPos.x < -gameBounds)
         {
-            transform.position = new Vector3(-gameBounds, playerPos.y, playerPos.z);
+            transform.position = new Vector3(-gameBounds, platformPos.y, platformPos.z);
         }
-        if (playerPos.x > gameBounds)
+        if (platformPos.x > gameBounds)
         {
-            transform.position = new Vector3(gameBounds, playerPos.y, playerPos.z);
+            transform.position = new Vector3(gameBounds, platformPos.y, platformPos.z);
         }
+    }
+
+    public void addPoints(int points)
+    {
+        score += points;
     }
 }

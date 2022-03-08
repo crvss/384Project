@@ -28,6 +28,7 @@ public class BrickControl : MonoBehaviour
             if (brickDamageTaken == brickHP)
             {
                 Destroy(this.gameObject);
+
             }
         }
     }
