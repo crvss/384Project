@@ -51,7 +51,6 @@ public class BallControl : MonoBehaviour
         {
             if (!ballMode)
             {
-                rb2D.isKinematic = false; //reset force on ball
                 rb2D.AddForce(ballInitialVector);
                 ballMode = !ballMode;
             }
@@ -67,8 +66,7 @@ public class BallControl : MonoBehaviour
             ballPos.x = platformObject.transform.position.x;
             ballPos.y = -6.924f; //arbitrary starting value for the ball
             transform.position = ballPos;
-
-            rb2D.isKinematic = true;
+            rb2D.velocity = Vector3.zero;
 
             platformObject.SendMessage("loseLife");
         }
