@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 4dc9d5b30943fe242a77c3f4faa31d2c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Neon Nanoborg
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f4a10538251096941bd5b40da3ce3be8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

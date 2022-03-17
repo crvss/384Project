@@ -11,6 +11,8 @@ public class PlatformController : MonoBehaviour
     private int score;
     private int lives;
 
+    private GUIStyle guiStyle = new GUIStyle();
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,8 +60,17 @@ public class PlatformController : MonoBehaviour
         score += points;
     }
 
+    void loseLife()
+    {
+        lives--;
+    }
+
     private void OnGUI()
     {
-        GUI.Label(new Rect(20.0f, 12.0f, 200.0f, 200.0f), "Lives:" + lives + " Score: " + score);
+        Font neonFont = (Font)Resources.Load("Fonts/Neon1", typeof(Font));
+
+        guiStyle.font = neonFont;
+        guiStyle.fontSize = 90;
+        GUI.Label(new Rect(60.0f, 30.0f, 200.0f, 200.0f), "Lives: " + lives + "    Score: " + score, guiStyle);
     }
 }

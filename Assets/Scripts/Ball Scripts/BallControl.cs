@@ -65,10 +65,12 @@ public class BallControl : MonoBehaviour
         {
             ballMode = !ballMode;
             ballPos.x = platformObject.transform.position.x;
-            ballPos.y = -6.926f; //arbitrary starting value for the ball
+            ballPos.y = -6.924f; //arbitrary starting value for the ball
             transform.position = ballPos;
 
             rb2D.isKinematic = true;
+
+            platformObject.SendMessage("loseLife");
         }
     }
 }
