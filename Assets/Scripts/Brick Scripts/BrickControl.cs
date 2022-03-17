@@ -27,8 +27,11 @@ public class BrickControl : MonoBehaviour
 
             if (brickDamageTaken == brickHP)
             {
-                Destroy(this.gameObject);
+                GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
 
+                platform.SendMessage("addPoints", pointsToGive);
+
+                Destroy(this.gameObject);
             }
         }
     }

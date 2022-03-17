@@ -57,4 +57,9 @@ public class PlatformController : MonoBehaviour
     {
         score += points;
     }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(20.0f, 12.0f, 200.0f, 200.0f), "Lives:" + lives + " Score: " + score);
+    }
 }
