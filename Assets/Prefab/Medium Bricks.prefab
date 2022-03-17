@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 468129283704693722, guid: 0b636c8e39b4d9c48bf90c3d18d1dab0, type: 3}
       propertyPath: pointsToGive
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1847378332469752425, guid: 0b636c8e39b4d9c48bf90c3d18d1dab0, type: 3}
       propertyPath: m_Name
