@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 235017344}
   m_Layer: 0
   m_Name: Easy Bricks
-  m_TagString: Untagged
+  m_TagString: Bricks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 1335877232}
   m_Layer: 0
   m_Name: Medium Bricks
-  m_TagString: Untagged
+  m_TagString: Bricks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1679,7 +1679,7 @@ GameObject:
   - component: {fileID: 1885148001}
   m_Layer: 0
   m_Name: Hard Bricks
-  m_TagString: Untagged
+  m_TagString: Bricks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

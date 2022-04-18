@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlatformController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlatformController : MonoBehaviour
     AudioSource audioSource;
     public AudioClip pointTick;
     public AudioClip lifeDown;
+
+    private static int LevelNumber = 1;
 
 
     // Start is called before the first frame update
@@ -45,7 +48,8 @@ public class PlatformController : MonoBehaviour
             //Return to menu - maybe confirm (?)
             
         }
-        
+
+        WinState();
     }
 
     private void boundaryRestrict()
@@ -64,13 +68,33 @@ public class PlatformController : MonoBehaviour
     public void addPoints(int points)
     {
         score += points;
-        audioSource.PlayOneShot(pointTick, 1.0f);
+        audioSource.PlayOneShot(pointTick, 0.5f);
     }
 
     void loseLife()
     {
         lives--;
         audioSource.PlayOneShot(lifeDown, 1.0f);
+    }
+
+    void WinState()
+    {
+        //Restart game if player loses
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("Level 1"); //Change to show menu before loading Level
+        }
+
+        //Check to see if all blocks have been destroyed
+        if ((GameObject.FindGameObjectsWithTag("Bricks")).Length == 0)
+        {
+            if (SceneManager.GetActiveScene().Equals("Level " + LevelNumber))
+            {
+                Debug.Log(SceneManager.GetActiveScene());
+                LevelNumber++;
+                SceneManager.LoadScene("Level " + LevelNumber);
+            }
+        }
     }
 
     private void OnGUI()

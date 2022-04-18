@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //public AudioClip clickTick;
+    //AudioSource audioSource;
+
     public string levelOne;
     void Start()
     {
-        
+        ///audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -16,6 +19,7 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
+        //audioSource.PlayOneShot(clickTick);
         SceneManager.LoadScene(levelOne);
     }
     public void OpenLeaderboard()
@@ -28,6 +32,7 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitGame()
     {
+        //audioSource.PlayOneShot(clickTick);
         Application.Quit();
         Debug.Log("Quit");
     }
