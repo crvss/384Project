@@ -10,6 +10,7 @@ public class BallControl : MonoBehaviour
     private Rigidbody2D rb2D;
     public GameObject platformObject;
     [SerializeField] public float deathZone;
+
     public AudioClip hitTick;
     public AudioClip temp;
     AudioSource audioSource;

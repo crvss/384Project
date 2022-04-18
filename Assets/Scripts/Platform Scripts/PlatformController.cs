@@ -13,6 +13,10 @@ public class PlatformController : MonoBehaviour
 
     private GUIStyle guiStyle = new GUIStyle();
 
+    AudioSource audioSource;
+    public AudioClip pointTick;
+    public AudioClip lifeDown;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +24,8 @@ public class PlatformController : MonoBehaviour
         platformPos = gameObject.transform.position;
         score = 0;
         lives = 3;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -58,11 +64,13 @@ public class PlatformController : MonoBehaviour
     public void addPoints(int points)
     {
         score += points;
+        audioSource.PlayOneShot(pointTick, 1.0f);
     }
 
     void loseLife()
     {
         lives--;
+        audioSource.PlayOneShot(lifeDown, 1.0f);
     }
 
     private void OnGUI()
