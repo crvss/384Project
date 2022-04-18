@@ -10,6 +10,7 @@ public class BallControl : MonoBehaviour
     private Rigidbody2D rb2D;
     public GameObject platformObject;
     [SerializeField] public float deathZone;
+    public AudioClip hitTick;
 
     private void Awake()
     {
@@ -54,6 +55,14 @@ public class BallControl : MonoBehaviour
                 rb2D.AddForce(ballInitialVector);
                 ballMode = !ballMode;
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (ballMode)
+        {
+            GetComponent<AudioSource>().Play();
         }
     }
 
