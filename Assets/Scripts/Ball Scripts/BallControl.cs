@@ -11,6 +11,8 @@ public class BallControl : MonoBehaviour
     public GameObject platformObject;
     [SerializeField] public float deathZone;
     public AudioClip hitTick;
+    public AudioClip temp;
+    AudioSource audioSource;
 
     private void Awake()
     {
@@ -27,6 +29,8 @@ public class BallControl : MonoBehaviour
         ballMode = false;
 
         ballPos = transform.position;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -62,7 +66,7 @@ public class BallControl : MonoBehaviour
     {
         if (ballMode)
         {
-            GetComponent<AudioSource>().Play();
+            audioSource.PlayOneShot(hitTick, 0.5f);
         }
     }
 
