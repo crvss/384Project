@@ -25,7 +25,7 @@ public class BallControl : MonoBehaviour
     void Start()
     {
         //Create initial force
-        ballInitialVector = new Vector2(300.0f, 600.0f);
+        ballInitialVector = new Vector2(400.0f, 800.0f);
 
         ballMode = false;
 
