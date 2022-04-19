@@ -82,8 +82,10 @@ public class PlatformController : MonoBehaviour
         //Restart game if player loses
         if (lives == 0)
         {
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Change to show menu before loading Level
+            GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
+            Debug.Log("1");
+            platform.SendMessage("playerDied");
+            Debug.Log("2");
         }
 
         //Check to see if all blocks have been destroyed
