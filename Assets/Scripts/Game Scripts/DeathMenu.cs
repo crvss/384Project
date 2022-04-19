@@ -18,12 +18,16 @@ public class DeathMenu : MonoBehaviour
     {
         deathMenu.SetActive(false);
         Time.timeScale = 1.0f;
+        //GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
+        //platform.SendMessage("deathMenuFlagReset");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void home(int sceneID)
     {
         Time.timeScale = 1.0f;
+        //GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
+        //platform.SendMessage("deathMenuFlagReset");
         SceneManager.LoadScene(sceneID);
     }
 }

@@ -19,6 +19,7 @@ public class PlatformController : MonoBehaviour
     public AudioClip lifeDown;
 
     private static int LevelNumber = 1;
+    public static bool DeathMenuFlag = false;
 
 
     // Start is called before the first frame update
@@ -83,9 +84,11 @@ public class PlatformController : MonoBehaviour
         if (lives == 0)
         {
             GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
-            Debug.Log("1");
-            platform.SendMessage("playerDied");
-            Debug.Log("2");
+            if (DeathMenuFlag == false)
+            {
+                platform.SendMessage("playerDied");
+                DeathMenuFlag = true;
+            }
         }
 
         //Check to see if all blocks have been destroyed
@@ -98,6 +101,11 @@ public class PlatformController : MonoBehaviour
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
+    }
+
+    void deathMenuFlagReset()
+    {
+        DeathMenuFlag = false;
     }
 
     private void OnGUI()
