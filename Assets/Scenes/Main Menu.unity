@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
+    - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 175852919618413208, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
     - target: {fileID: 4341318391480226183, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -840,6 +848,14 @@ PrefabInstance:
       value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
+    - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 175852919618413208, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
+    - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_enableVertexGradient
       value: 0
       objectReference: {fileID: 0}
@@ -1275,8 +1291,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Breakout
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 491dea695d4a21a40bb148241a43a2f2, type: 2}
-  m_sharedMaterial: {fileID: 175852919618413208, guid: 491dea695d4a21a40bb148241a43a2f2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
+  m_sharedMaterial: {fileID: 175852919618413208, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1759,7 +1775,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aa8dee79c763b2d43abc0c4962facf98, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2112,6 +2128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 375563264}
     m_Modifications:
+    - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
+    - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 175852919618413208, guid: 4b14bae773fc66d4486e913c6579425a, type: 2}
     - target: {fileID: 4341318391480226183, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

@@ -19,7 +19,6 @@ public class PlatformController : MonoBehaviour
     public AudioClip lifeDown;
 
     private static int LevelNumber = 1;
-    public static bool DeathMenuFlag = false;
 
 
     // Start is called before the first frame update
@@ -44,13 +43,7 @@ public class PlatformController : MonoBehaviour
 
         boundaryRestrict();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //Return to menu - maybe confirm (?)
-            
-        }
-
-        WinState();
+        winState();
     }
 
     private void boundaryRestrict()
@@ -78,34 +71,24 @@ public class PlatformController : MonoBehaviour
         audioSource.PlayOneShot(lifeDown, 1.0f);
     }
 
-    void WinState()
+    void winState()
     {
         //Restart game if player loses
         if (lives == 0)
         {
             GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
-            if (DeathMenuFlag == false)
-            {
-                platform.SendMessage("playerDied");
-                DeathMenuFlag = true;
-            }
+            platform.SendMessage("playerDied");     
         }
 
         //Check to see if all blocks have been destroyed
         if (GameObject.FindGameObjectsWithTag("Bricks").Length == 0)
         {
-            Debug.Log(SceneManager.GetActiveScene().name);
             if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
             {
                 LevelNumber++;  
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
-    }
-
-    void deathMenuFlagReset()
-    {
-        DeathMenuFlag = false;
     }
 
     private void OnGUI()
