@@ -86,12 +86,12 @@ public class PlatformController : MonoBehaviour
         }
 
         //Check to see if all blocks have been destroyed
-        if ((GameObject.FindGameObjectsWithTag("Bricks")).Length == 0)
+        if (GameObject.FindGameObjectsWithTag("Bricks").Length == 0)
         {
-            if (SceneManager.GetActiveScene().Equals("Level " + LevelNumber))
+            Debug.Log(SceneManager.GetActiveScene().name);
+            if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
             {
-                Debug.Log(SceneManager.GetActiveScene());
-                LevelNumber++;
+                LevelNumber++;  
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
