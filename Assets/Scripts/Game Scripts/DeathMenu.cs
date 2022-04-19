@@ -11,7 +11,7 @@ public class DeathMenu : MonoBehaviour
     {
         Debug.Log("Pause");
         deathMenu.SetActive(true);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0.01f;
     }
 
     public void retry()
