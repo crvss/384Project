@@ -20,6 +20,12 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         //audioSource.PlayOneShot(clickTick);
+        GameObject nameSpace = GameObject.FindGameObjectsWithTag("NameSpace")[0];
+        nameSpace.SetActive(true);
+    }
+    public void nameEntered(string playerName)
+    {
+        PlayerData playerData = new PlayerData(playerName, 0, 0);
         SceneManager.LoadScene(levelOne);
     }
     public void OpenLeaderboard()

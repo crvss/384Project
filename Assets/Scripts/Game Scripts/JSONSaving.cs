@@ -18,7 +18,7 @@ public class JSONSaving : MonoBehaviour
 
     private void SetPaths()
     {
-        path = Application.dataPath + Path.AltDirectorySeparatorChar + "PlayerSave.json";
+        //path = Application.dataPath + Path.AltDirectorySeparatorChar + "PlayerSave.json";
         persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "PlayerSave.json";
     }
 
@@ -29,13 +29,7 @@ public class JSONSaving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.S))
-            SaveData();
-
-        if (Input.GetKeyDown(KeyCode.L))
-            LoadData();
-        
+ 
     }
 
     public void SaveData()

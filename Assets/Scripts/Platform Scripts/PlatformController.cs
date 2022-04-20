@@ -9,6 +9,7 @@ public class PlatformController : MonoBehaviour
     public float gameBounds;
     private Vector3 platformPos;
 
+    private string playerName;
     private int score;
     private int lives;
 
@@ -29,6 +30,8 @@ public class PlatformController : MonoBehaviour
         lives = 3;
 
         audioSource = GetComponent<AudioSource>();
+
+        PlayerData playerData = new PlayerData(playerName, score, LevelNumber);
     }
 
     // Update is called once per frame
@@ -74,6 +77,7 @@ public class PlatformController : MonoBehaviour
     void winState()
     {
         GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
+        GameObject save = GameObject.FindGameObjectsWithTag("Save")[0];
         //Restart game if player loses
         if (lives == 0)
         {
@@ -86,6 +90,7 @@ public class PlatformController : MonoBehaviour
             if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
             {
                 LevelNumber++;
+                save.SendMessage("SaveData");
                 platform.SendMessage("levelPassedScreen");
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
