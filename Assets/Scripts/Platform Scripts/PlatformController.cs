@@ -73,10 +73,10 @@ public class PlatformController : MonoBehaviour
 
     void winState()
     {
+        GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
         //Restart game if player loses
         if (lives == 0)
         {
-            GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
             platform.SendMessage("playerDied");     
         }
 
@@ -85,7 +85,8 @@ public class PlatformController : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
             {
-                LevelNumber++;  
+                LevelNumber++;
+                platform.SendMessage("levelPassedScreen");
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
