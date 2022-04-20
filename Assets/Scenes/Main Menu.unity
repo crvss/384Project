@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b4fcdf94be74b44a31d961bc0d7393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameSpace: {fileID: 1097197654}
   levelOne: Level 1
 --- !u!1 &375852528
 GameObject:
@@ -1626,7 +1627,7 @@ MonoBehaviour:
       - m_Target: {fileID: 375563265}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: nameEntered
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

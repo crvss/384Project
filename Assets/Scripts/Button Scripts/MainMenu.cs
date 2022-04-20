@@ -7,24 +7,21 @@ public class MainMenu : MonoBehaviour
 {
     //public AudioClip clickTick;
     //AudioSource audioSource;
+    [SerializeField] GameObject nameSpace;
 
     public string levelOne;
     void Start()
     {
         ///audioSource = GetComponent<AudioSource>();
     }
-    void Update()
-    {
-        
-    }
     public void StartGame()
     {
         //audioSource.PlayOneShot(clickTick);
-        GameObject nameSpace = GameObject.FindGameObjectsWithTag("NameSpace")[0];
         nameSpace.SetActive(true);
     }
     public void nameEntered(string playerName)
     {
+        Debug.Log(playerName);
         PlayerData playerData = new PlayerData(playerName, 0, 0);
         SceneManager.LoadScene(levelOne);
     }
