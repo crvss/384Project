@@ -21,7 +21,6 @@ public class MainMenu : MonoBehaviour
     }
     public void nameEntered(string playerName)
     {
-        Debug.Log(playerName);
         PlayerData playerData = new PlayerData(playerName, 0, 0);
         SceneManager.LoadScene(levelOne);
     }

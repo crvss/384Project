@@ -15,6 +15,19 @@ public class PlayerData
         this.level = level;
     }
 
+    public void SetScore(int score)
+    {
+        this.score = score;
+    }
+    public void SetLevel(int level)
+    {
+        this.level = level;
+    }
+
+    public string GetPlayerName()
+    {
+        return this.playerName;
+    } 
     public override string ToString()
     {
         return $"{playerName} has {score} points at Level {level}";
