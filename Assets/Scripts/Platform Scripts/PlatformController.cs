@@ -92,11 +92,18 @@ public class PlatformController : MonoBehaviour
             if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
             {
                 LevelNumber++;
-                save.SendMessage("SaveData");
+                updatePlayerScore();
+                save.SendMessage("CreatePlayerData");
                 platform.SendMessage("levelPassedScreen");
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
+    }
+    
+    private void updatePlayerScore()
+    {
+        PlayerData.score = score;
+        PlayerData.level = LevelNumber;
     }
 
     private void OnGUI()

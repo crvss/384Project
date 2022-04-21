@@ -9,7 +9,6 @@ public class JSONSaving : MonoBehaviour
     private string persistentPath = "";
     private PlayerTemp playerTemp;
 
-    // Start is called before the first frame update
     void Start()
     {
         SetPaths();
@@ -23,13 +22,15 @@ public class JSONSaving : MonoBehaviour
 
     public void CreatePlayerData()
     {
-        playerTemp = new PlayerTemp(PlayerData.playerName, 0, 0);
+        if (PlayerData.score == 0)
+        {
+            playerTemp = new PlayerTemp(PlayerData.playerName, 0, 0);
+        }
+        else
+        {
+            playerTemp = new PlayerTemp(PlayerData.playerName, PlayerData.score, PlayerData.level);
+        }
         SaveData();
-    }
-    // Update is called once per frame
-    void Update()
-    {
- 
     }
 
     string PlayerDataString()
@@ -41,7 +42,7 @@ public class JSONSaving : MonoBehaviour
     {
         string savePath = persistentPath;
         Debug.Log("Saving data at " + savePath);
-
+        
         string json = JsonUtility.ToJson(playerTemp);
         Debug.Log(json);
 
