@@ -31,7 +31,9 @@ public class PlatformController : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
-        PlayerData playerData = new PlayerData(playerName, score, LevelNumber);
+        PlayerData.playerName = playerName;
+        PlayerData.score = score;
+        PlayerData.level = LevelNumber;
     }
 
     // Update is called once per frame

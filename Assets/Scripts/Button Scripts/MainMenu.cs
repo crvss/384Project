@@ -5,23 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    //public AudioClip clickTick;
-    //AudioSource audioSource;
     [SerializeField] GameObject nameSpace;
 
     public string levelOne;
     void Start()
     {
-        ///audioSource = GetComponent<AudioSource>();
+
     }
     public void StartGame()
     {
-        //audioSource.PlayOneShot(clickTick);
         nameSpace.SetActive(true);
     }
     public void nameEntered(string playerName)
     {
-        PlayerData playerData = new PlayerData(playerName, 0, 0);
+        GameObject save = GameObject.FindGameObjectsWithTag("Save")[0];
+        PlayerData.playerName = playerName;
+        save.SendMessage("SaveData");
         SceneManager.LoadScene(levelOne);
     }
     public void OpenLeaderboard()
@@ -34,7 +33,6 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitGame()
     {
-        //audioSource.PlayOneShot(clickTick);
         Application.Quit();
         Debug.Log("Quit");
     }
