@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     {
         GameObject save = GameObject.FindGameObjectsWithTag("Save")[0];
         PlayerData.playerName = playerName;
-        save.SendMessage("SaveData");
+        save.SendMessage("CreatePlayerData");
         SceneManager.LoadScene(levelOne);
     }
     public void OpenLeaderboard()
