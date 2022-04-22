@@ -31,8 +31,15 @@ public class BrickControl : MonoBehaviour
 
                 platform.SendMessage("addPoints", pointsToGive);
 
+                if (this.gameObject.tag == "PowerUp")
+                {
+                    GameObject powerUp = GameObject.FindGameObjectsWithTag("PowerUp")[0];
+                    powerUp.SendMessage("onBreak");
+                }
+
                 Destroy(this.gameObject);
             }
         }
+        
     }
 }
