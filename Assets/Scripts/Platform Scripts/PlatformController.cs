@@ -34,8 +34,6 @@ public class PlatformController : MonoBehaviour
         PlayerData.playerName = playerName;
         PlayerData.score = score;
         PlayerData.level = LevelNumber;
-
-        Debug.Log(PlayerData.playerName);
     }
 
     // Update is called once per frame
