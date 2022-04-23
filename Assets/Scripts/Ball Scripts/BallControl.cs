@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     private Vector3 ballPos;
     private Vector2 ballInitialVector;
     private Rigidbody2D rb2D;
+    private TrailRenderer trail;
     public GameObject platformObject;
     [SerializeField] public float deathZone;
 
@@ -18,6 +19,7 @@ public class BallControl : MonoBehaviour
     private void Awake()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        trail = gameObject.GetComponent<TrailRenderer>();
     }
 
 
@@ -76,12 +78,13 @@ public class BallControl : MonoBehaviour
         //Reset the ball when the player dies :(
         if (ballMode && transform.position.y < deathZone)
         {
+            trail.enabled = false;
             ballMode = !ballMode;
             ballPos.x = platformObject.transform.position.x;
             ballPos.y = -6.924f; //arbitrary starting value for the ball
             transform.position = ballPos;
             rb2D.velocity = Vector3.zero;
-
+            trail.enabled = true;
             platformObject.SendMessage("loseLife");
         }
     }

@@ -27,7 +27,7 @@ public class PlatformController : MonoBehaviour
     {
         platformPos = gameObject.transform.position;
         score = 0;
-        lives = 3;
+        lives = 5;
 
         audioSource = GetComponent<AudioSource>();
 
