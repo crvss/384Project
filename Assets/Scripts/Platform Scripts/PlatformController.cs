@@ -102,7 +102,7 @@ public class PlatformController : MonoBehaviour
     
     private void updatePlayerScore()
     {
-        PlayerData.score = score;
+        PlayerData.score += score;
         PlayerData.level = LevelNumber;
     }
 

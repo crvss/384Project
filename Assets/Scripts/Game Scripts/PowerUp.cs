@@ -18,6 +18,7 @@ public class PowerUp : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject.FindGameObjectWithTag("Player").transform.localScale += new Vector3(0.2F, 0, 0);
         Destroy(this.gameObject);
     }
 }
