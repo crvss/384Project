@@ -132,7 +132,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_text
-      value: Leaderboards
+      value: 'Achievements
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 1932237569185165823, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_fontSize
@@ -176,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547049919251930082, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_Name
-      value: Leaderboards
+      value: Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 8505143040492990697, guid: eafaf9d1504ed3b40b4fe90dfbbad0fa, type: 3}
       propertyPath: m_Pivot.x
