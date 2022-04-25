@@ -36,7 +36,7 @@ public class BrickControl : MonoBehaviour
                     GameObject powerUp = GameObject.FindGameObjectsWithTag("PowerUp")[0];
                     powerUp.SendMessage("onBreak");
                 }
-
+                Achievements.achieveBBNumber += 1;
                 Destroy(this.gameObject);
             }
         }
