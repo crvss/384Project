@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlatformController : MonoBehaviour
 {
+    [SerializeField] GameObject levelPassed;
     [SerializeField] private float Speed = 20f;
     public float gameBounds;
     private Vector3 platformPos;
@@ -46,12 +47,12 @@ public class PlatformController : MonoBehaviour
         //Update player position
         platformPos = this.transform.position;
 
-        boundaryRestrict();
+        BoundaryRestrict();
 
-        winState();
+        WinState();
     }
 
-    private void boundaryRestrict()
+    private void BoundaryRestrict()
     {
         //Prevent platform from moving outside game bounds
         if (platformPos.x < -gameBounds)
@@ -64,19 +65,19 @@ public class PlatformController : MonoBehaviour
         }
     }
 
-    public void addPoints(int points)
+    public void AddPoints(int points)
     {
         score += points;
         audioSource.PlayOneShot(pointTick, 0.5f);
     }
 
-    void loseLife()
+    void LoseLife()
     {
         lives--;
         audioSource.PlayOneShot(lifeDown, 1.0f);
     }
 
-    void winState()
+    void WinState()
     {
         GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
         GameObject save = GameObject.FindGameObjectsWithTag("Save")[0];
@@ -92,15 +93,15 @@ public class PlatformController : MonoBehaviour
             if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
             {
                 LevelNumber++;
-                updatePlayerScore();
+                UpdatePlayerScore();
                 save.SendMessage("CreatePlayerData");
-                platform.SendMessage("levelPassedScreen");
+                StartCoroutine(LevelPassed());
                 SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
     }
     
-    private void updatePlayerScore()
+    private void UpdatePlayerScore()
     {
         PlayerData.score += score;
         PlayerData.level = LevelNumber;
@@ -113,5 +114,12 @@ public class PlatformController : MonoBehaviour
         guiStyle.font = neonFont;
         guiStyle.fontSize = 90;
         GUI.Label(new Rect(60.0f, 30.0f, 200.0f, 200.0f), "Lives: " + lives + "    Score: " + score, guiStyle);
+    }
+
+    IEnumerator LevelPassed()
+    {
+        levelPassed.SetActive(true);
+        yield return new WaitForSecondsRealtime(4.0f);
+        levelPassed.SetActive(false);
     }
 }

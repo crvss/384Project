@@ -29,12 +29,12 @@ public class BrickControl : MonoBehaviour
             {
                 GameObject platform = GameObject.FindGameObjectsWithTag("Player")[0];
 
-                platform.SendMessage("addPoints", pointsToGive);
+                platform.SendMessage("AddPoints", pointsToGive);
 
                 if (this.gameObject.tag == "PowerUp")
                 {
                     GameObject powerUp = GameObject.FindGameObjectsWithTag("PowerUp")[0];
-                    powerUp.SendMessage("onBreak");
+                    powerUp.SendMessage("OnBreak");
                 }
                 Achievements.achieveBBNumber += 1;
                 Destroy(this.gameObject);

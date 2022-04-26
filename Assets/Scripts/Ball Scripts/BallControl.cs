@@ -39,7 +39,7 @@ public class BallControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        applyBallForce();
+        ApplyBallForce();
 
         //Attach ball to platform while inactive
         if (!ballMode && platformObject != null)
@@ -49,10 +49,10 @@ public class BallControl : MonoBehaviour
             transform.position = ballPos;
         }
 
-        resetOnDeath();
+        ResetOnDeath();
     }
 
-    private void applyBallForce()
+    private void ApplyBallForce()
     {
         //Inital force to start the game
         if (Input.GetButtonDown("Jump") == true)
@@ -73,7 +73,7 @@ public class BallControl : MonoBehaviour
         }
     }
 
-    public void resetOnDeath()
+    public void ResetOnDeath()
     {
         //Reset the ball when the player dies :(
         if (ballMode && transform.position.y < deathZone)
@@ -85,7 +85,7 @@ public class BallControl : MonoBehaviour
             transform.position = ballPos;
             rb2D.velocity = Vector3.zero;
             trail.enabled = true;
-            platformObject.SendMessage("loseLife");
+            platformObject.SendMessage("LoseLife");
         }
     }
 }

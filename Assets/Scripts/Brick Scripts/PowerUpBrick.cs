@@ -6,7 +6,7 @@ public class PowerUpBrick : MonoBehaviour
 {
     [SerializeField] GameObject powerUp;
 
-    public void onBreak()
+    public void OnBreak()
     {
         powerUp.SetActive(true);
     }

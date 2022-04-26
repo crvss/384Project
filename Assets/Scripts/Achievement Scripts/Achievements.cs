@@ -15,10 +15,13 @@ public class Achievements : MonoBehaviour
     public static int achieveBBNumber;
     public GameObject achieveBBImage;
     public int achieveBBTrigger = 20;
-    public int achieveBBCode; //unique achievement identifier
+    public int achieveBBCode; //unique achievement identifier and ensures users dont get two of the same achievement
 
     void Update()
     {
+        //Uncomment to reset achievement code for debugging
+        //PlayerPrefs.SetInt("AchieveBB", 0);
+
         achieveBBCode = PlayerPrefs.GetInt("AchieveBB");
         if (achieveBBNumber == achieveBBTrigger && achieveBBCode != 404)
         {
@@ -31,17 +34,17 @@ public class Achievements : MonoBehaviour
         achieveActive = true;
         achieveBBCode = 404;
         PlayerPrefs.SetInt("AchieveBB", achieveBBCode);
-        //play sound
-        achieveTitle.GetComponent<Text>().text = "Brick Breaker";
-        achieveDesc.GetComponent<Text>().text = "Break 20 Bricks";
+        achieveSound.Play();
         achievePanel.SetActive(true);
         achieveBBImage.SetActive(true);
+        achieveTitle.GetComponent<TMPro.TextMeshProUGUI>().text = "Brick Breaker";
+        achieveDesc.GetComponent<TMPro.TextMeshProUGUI>().text = "Break 20 Bricks";
         yield return new WaitForSeconds(5);
 
         achievePanel.SetActive(false);
         achieveBBImage.SetActive(false);
-        achieveTitle.GetComponent<Text>().text = "";
-        achieveDesc.GetComponent<Text>().text = "";
+        achieveTitle.GetComponent<TMPro.TextMeshProUGUI>().text = "";
+        achieveDesc.GetComponent<TMPro.TextMeshProUGUI>().text = "";
         achieveActive = false;
     }
 }
