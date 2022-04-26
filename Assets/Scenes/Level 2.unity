@@ -364,7 +364,6 @@ GameObject:
   - component: {fileID: 71111485}
   - component: {fileID: 71111484}
   - component: {fileID: 71111489}
-  - component: {fileID: 71111490}
   m_Layer: 7
   m_Name: Platform
   m_TagString: Player
@@ -496,6 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7b0852c4a01c041a319d5217ce50dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPassed: {fileID: 1913474692}
   Speed: 20
   gameBounds: 15.75
   pointTick: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
@@ -578,19 +578,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathMenu: {fileID: 288348697}
---- !u!114 &71111490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71111483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea72f9b2d3756f49a5648bc081f5d82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelPassed: {fileID: 1913474692}
 --- !u!1 &89313431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,7 +3281,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 71111489}
         m_TargetAssemblyTypeName: DeathMenu, Assembly-CSharp
-        m_MethodName: retry
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4151,7 +4138,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 71111489}
         m_TargetAssemblyTypeName: DeathMenu, Assembly-CSharp
-        m_MethodName: home
+        m_MethodName: Home
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

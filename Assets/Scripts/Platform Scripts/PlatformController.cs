@@ -22,10 +22,14 @@ public class PlatformController : MonoBehaviour
 
     private static int LevelNumber = 1;
 
+    private bool levelPassFlag = true;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        levelPassFlag = true;
+
         platformPos = gameObject.transform.position;
         score = 0;
         lives = 5;
@@ -84,19 +88,19 @@ public class PlatformController : MonoBehaviour
         //Restart game if player loses
         if (lives == 0)
         {
-            platform.SendMessage("playerDied");     
+            platform.SendMessage("PlayerDied");     
         }
 
         //Check to see if all blocks have been destroyed
         if (GameObject.FindGameObjectsWithTag("Bricks").Length == 0)
         {
-            if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber))
+            if (SceneManager.GetActiveScene().name.Equals("Level " + LevelNumber) && levelPassFlag)
             {
+                levelPassFlag = !levelPassFlag;
                 LevelNumber++;
                 UpdatePlayerScore();
                 save.SendMessage("CreatePlayerData");
                 StartCoroutine(LevelPassed());
-                SceneManager.LoadScene("Level " + LevelNumber);
             }
         }
     }
@@ -119,7 +123,10 @@ public class PlatformController : MonoBehaviour
     IEnumerator LevelPassed()
     {
         levelPassed.SetActive(true);
-        yield return new WaitForSecondsRealtime(4.0f);
+        Time.timeScale = 0.0f;
+        yield return new WaitForSecondsRealtime(3.0f);
+        Time.timeScale = 1.0f;
         levelPassed.SetActive(false);
+        SceneManager.LoadScene("Level " + LevelNumber);
     }
 }

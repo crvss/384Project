@@ -1812,7 +1812,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1669829521}
         m_TargetAssemblyTypeName: DeathMenu, Assembly-CSharp
-        m_MethodName: home
+        m_MethodName: Home
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2486,7 +2486,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1669829521}
         m_TargetAssemblyTypeName: DeathMenu, Assembly-CSharp
-        m_MethodName: retry
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
