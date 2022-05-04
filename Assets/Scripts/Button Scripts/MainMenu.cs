@@ -23,14 +23,11 @@ public class MainMenu : MonoBehaviour
         save.SendMessage("CreatePlayerData");
         SceneManager.LoadScene(levelOne);
     }
-    public void OpenLeaderboard()
+    public void OpenAchievements()
     {
-
+        SceneManager.LoadScene("Achievements");
     }
-    public void CloseLeaderboard()
-    {
 
-    }
     public void QuitGame()
     {
         Application.Quit();

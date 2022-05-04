@@ -31,7 +31,6 @@ public class PlatformController : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
-        PlayerData.playerName = playerName;
         PlayerData.score = score;
         PlayerData.level = LevelNumber;
     }
@@ -122,7 +121,7 @@ public class PlatformController : MonoBehaviour
         Time.timeScale = 1.0f;
         levelPassed.SetActive(false);
         if (LevelNumber == 4)
-            SceneManager.LoadScene("Game Complete Scene");
+            SceneManager.LoadScene(5);
         SceneManager.LoadScene("Level " + LevelNumber);
     }
 }
