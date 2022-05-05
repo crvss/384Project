@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 public class AchievementsMenu : MonoBehaviour
 {
     public GameObject achieveState;
-    public static bool achieveFlag = false;
 
     private void Awake()
     {
-        if (achieveFlag)
+        if (PlayerPrefs.GetInt("AchieveBB") == 404)
         {
             UnlockAch();
         }

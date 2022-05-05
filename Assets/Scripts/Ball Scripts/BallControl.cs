@@ -49,6 +49,11 @@ public class BallControl : MonoBehaviour
             transform.position = ballPos;
         }
 
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            rb2D.AddForce(ballInitialVector);
+        }
+
         ResetOnDeath();
     }
 

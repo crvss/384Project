@@ -20,7 +20,7 @@ public class Achievements : MonoBehaviour
     void Update()
     {
         //Uncomment to reset achievement code for debugging
-        PlayerPrefs.SetInt("AchieveBB", 0);
+        //PlayerPrefs.SetInt("AchieveBB", 0);
 
         achieveBBCode = PlayerPrefs.GetInt("AchieveBB");
         if (achieveBBNumber == achieveBBTrigger && achieveBBCode != 404)
@@ -31,8 +31,6 @@ public class Achievements : MonoBehaviour
 
     IEnumerator BBTrigger()
     {
-        AchievementsMenu.achieveFlag = true;
-
         achieveActive = true;
         achieveBBCode = 404;
         PlayerPrefs.SetInt("AchieveBB", achieveBBCode);

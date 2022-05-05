@@ -33,6 +33,7 @@ public class PlatformController : MonoBehaviour
 
         PlayerData.score = score;
         PlayerData.level = LevelNumber;
+        Debug.Log(LevelNumber);
     }
 
     // Update is called once per frame
@@ -120,8 +121,6 @@ public class PlatformController : MonoBehaviour
         yield return new WaitForSecondsRealtime(3.0f);
         Time.timeScale = 1.0f;
         levelPassed.SetActive(false);
-        if (LevelNumber == 4)
-            SceneManager.LoadScene(5);
         SceneManager.LoadScene("Level " + LevelNumber);
     }
 }
