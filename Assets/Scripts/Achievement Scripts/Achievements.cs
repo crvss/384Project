@@ -19,9 +19,6 @@ public class Achievements : MonoBehaviour
 
     void Update()
     {
-        //Uncomment to reset achievement code for debugging
-        //PlayerPrefs.SetInt("AchieveBB", 0);
-
         achieveBBCode = PlayerPrefs.GetInt("AchieveBB");
         if (achieveBBNumber == achieveBBTrigger && achieveBBCode != 404)
         {

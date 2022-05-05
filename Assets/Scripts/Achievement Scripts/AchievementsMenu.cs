@@ -20,6 +20,12 @@ public class AchievementsMenu : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void ResetAchievements()
+    {
+        PlayerPrefs.SetInt("AchieveBB", 0);
+        achieveState.GetComponent<TMPro.TextMeshProUGUI>().text = "Achievement Locked";
+    }
+
     public void UnlockAch()
     {
         achieveState.GetComponent<TMPro.TextMeshProUGUI>().text = "Achievement Unlocked";
